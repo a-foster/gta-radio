@@ -1,0 +1,51 @@
+<html>
+
+<body
+    style="background-color: black;background-image: url('images/gta.jpg');background-repeat: no-repeat;background-attachment: fixed;background-position: center;">
+    <div class="station_icons" id="fever_105_container"
+        style="background-image: url('images/fever_105.png');background-repeat: no-repeat;background-attachment: fixed;background-position: center;">
+        <audio controls id="fever_105">
+            <source src="https://s3.eu-west-1.amazonaws.com/gta-radio.foztech.co.uk/fever_105.mp3" type="audio/mp3">
+        </audio>
+    </div>
+    <div class="station_icons" id="wave_103_container"
+        style="background-image: url('images/fever_105.png');background-repeat: no-repeat;background-attachment: fixed;background-position: center;">
+        <audio controls id="wave_103">
+            <source src="https://s3.eu-west-1.amazonaws.com/gta-radio.foztech.co.uk/wave_103.mp3" type="audio/mp3">
+        </audio>
+    </div>
+</body>
+
+</html>
+<style>
+    .station_icons {
+        /* width: 30px;
+    height: 30px; */
+    }
+</style>
+<script>
+    window.onload = setAllAudioTimes;
+
+    // set current seconds on all audio elements so they play from the same point
+    function setAllAudioTimes() {
+        let audioElements = document.querySelectorAll('audio')
+        for (var i = audioElements.length - 1; i >= 0; i--) {
+            setAudioTime(audioElements[i]);
+        }
+    }
+
+    // tracks are one hour each so get the time within current hour
+    function getCurrentSeconds() {
+        const d = new Date();
+        let minutes = d.getMinutes();
+        let seconds = d.getSeconds();
+        return minutes * 60 + seconds;
+    }
+
+    // set current seconds on an audio element
+    function setAudioTime(audioElement) {
+        console.log(audioElement)
+        audioElement.currentTime = getCurrentSeconds();
+    }
+
+</script>
