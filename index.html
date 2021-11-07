@@ -68,10 +68,10 @@
             </audio>
             <input onclick="playStation('vladivostok')" type="image" class="station_icons" src="images/vladivostok.png" />
         </div>
-        <!-- <audio controls loop id="wave_103" class="station_icons circle deg-270">
-            <source src="https://s3.eu-west-1.amazonaws.com/gta-radio.foztech.co.uk/wave_103.mp3" type="audio/mp3">
-        </audio> -->
     </div>
+    <audio controls id="beep">
+        <source src="sound_effects/beep.mp3" type="audio/mp3">
+    </audio>
 </body>
 </html>
 <style>
@@ -155,14 +155,21 @@
 <script>
     window.onload = setAllAudioTimes;
 
-    function playStation(stationName) {
+    async function playStation(stationName) {
         // start by pausing all stations
         let allStations = document.getElementsByTagName('audio')
         for (var i = allStations.length - 1; i >= 0; i--) {
             allStations[i].pause();
         }
 
-        // now play this station
+        // play change station sound effect
+        document.getElementById('beep').play();
+        await new Promise(r => setTimeout(r, 400));
+        
+        // update audio times to 'current' time
+        setAllAudioTimes()
+
+        // now play this station, but wait for beep to finish
         document.getElementById(stationName).play();
     }
 
