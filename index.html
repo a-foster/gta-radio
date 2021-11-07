@@ -1,30 +1,170 @@
 <html>
-
 <body
     style="background-color: black;background-image: url('images/gta.jpg');background-repeat: no-repeat;background-attachment: fixed;background-position: center;">
-    <div class="station_icons" id="fever_105_container"
-        style="background-image: url('images/fever_105.png');background-repeat: no-repeat;background-attachment: fixed;background-position: center;">
-        <audio controls id="fever_105">
-            <source src="https://s3.eu-west-1.amazonaws.com/gta-radio.foztech.co.uk/fever_105.mp3" type="audio/mp3">
-        </audio>
-    </div>
-    <div class="station_icons" id="wave_103_container"
-        style="background-image: url('images/fever_105.png');background-repeat: no-repeat;background-attachment: fixed;background-position: center;">
-        <audio controls id="wave_103">
+    <div class="circle-wrapper">
+        <div class="circle deg-300"> 
+            <audio controls loop id="fever_105">
+                <source src="https://s3.eu-west-1.amazonaws.com/gta-radio.foztech.co.uk/fever_105.mp3" type="audio/mp3">
+            </audio>
+            <input onclick="playStation('fever_105')" type="image" class="station_icons" src="images/fever_105.png" />
+        </div>
+        <div class="circle deg-330"> 
+            <audio controls loop id="wave_103">
+                <source src="https://s3.eu-west-1.amazonaws.com/gta-radio.foztech.co.uk/wave_103.mp3" type="audio/mp3">
+            </audio>
+            <input onclick="playStation('wave_103')" type="image" class="station_icons" src="images/wave_103.svg" />
+        </div>
+        <div class="circle deg-0"> 
+            <audio controls loop id="flash_fm">
+                <source src="https://s3.eu-west-1.amazonaws.com/gta-radio.foztech.co.uk/flash_fm.mp3" type="audio/mp3">
+            </audio>
+            <input onclick="playStation('flash_fm')" type="image" class="station_icons" src="images/flash_fm.png" />
+        </div>
+        <div class="circle deg-30"> 
+            <audio controls loop id="emotion">
+                <source src="https://s3.eu-west-1.amazonaws.com/gta-radio.foztech.co.uk/emotion.mp3" type="audio/mp3">
+            </audio>
+            <input onclick="playStation('emotion')" type="image" class="station_icons" src="images/emotion.svg" />
+        </div>
+        <div class="circle deg-60"> 
+            <audio controls loop id="k_dst">
+                <source src="https://s3.eu-west-1.amazonaws.com/gta-radio.foztech.co.uk/k_dst.mp3" type="audio/mp3">
+            </audio>
+            <input onclick="playStation('k_dst')" type="image" class="station_icons" src="images/k_dst.png" />
+        </div>
+        <div class="circle deg-90"> 
+            <audio controls loop id="k_rose">
+                <source src="https://s3.eu-west-1.amazonaws.com/gta-radio.foztech.co.uk/k_rose.mp3" type="audio/mp3">
+            </audio>
+            <input onclick="playStation('k_rose')" type="image" class="station_icons" src="images/k_rose.svg" />
+        </div>
+        <div class="circle deg-120"> 
+            <audio controls loop id="los_santos_rock">
+                <source src="https://s3.eu-west-1.amazonaws.com/gta-radio.foztech.co.uk/los_santos_rock.mp3" type="audio/mp3">
+            </audio>
+            <input onclick="playStation('los_santos_rock')" type="image" class="station_icons" src="images/los_santos_rock.png" />
+        </div>
+        <div class="circle deg-150"> 
+            <audio controls loop id="non_stop_pop">
+                <source src="https://s3.eu-west-1.amazonaws.com/gta-radio.foztech.co.uk/non_stop_pop.mp3" type="audio/mp3">
+            </audio>
+            <input onclick="playStation('non_stop_pop')" type="image" class="station_icons" src="images/non_stop_pop.png" />
+        </div>
+        <div class="circle deg-180"> 
+            <audio controls loop id="radio_mirror_park">
+                <source src="https://s3.eu-west-1.amazonaws.com/gta-radio.foztech.co.uk/radio_mirror_park.mp3" type="audio/mp3">
+            </audio>
+            <input onclick="playStation('radio_mirror_park')" type="image" class="station_icons" src="images/radio_mirror_park.png" />
+        </div>
+        <div class="circle deg-210"> 
+            <audio controls loop id="worldwide">
+                <source src="https://s3.eu-west-1.amazonaws.com/gta-radio.foztech.co.uk/worldwide.mp3" type="audio/mp3">
+            </audio>
+            <input onclick="playStation('worldwide')" type="image" class="station_icons" src="images/worldwide.png" />
+        </div>
+        <div class="circle deg-240"> 
+            <audio controls loop id="vladivostok">
+                <source src="https://s3.eu-west-1.amazonaws.com/gta-radio.foztech.co.uk/vladivostok.mp3" type="audio/mp3">
+            </audio>
+            <input onclick="playStation('vladivostok')" type="image" class="station_icons" src="images/vladivostok.png" />
+        </div>
+        <!-- <audio controls loop id="wave_103" class="station_icons circle deg-270">
             <source src="https://s3.eu-west-1.amazonaws.com/gta-radio.foztech.co.uk/wave_103.mp3" type="audio/mp3">
-        </audio>
+        </audio> -->
     </div>
 </body>
-
 </html>
 <style>
+    audio {
+        display: none !important;
+    }
+
     .station_icons {
-        /* width: 30px;
-    height: 30px; */
+        height: 5em;
+    }
+
+    .circle-wrapper {
+        width: 501px;
+        height: 501px;
+        border-radius: 51%;
+        margin: auto;
+        margin-top: 30%;
+    }
+
+    .circle {
+        display: block;
+        position: absolute;
+        top: 51%;
+        left: 51%;
+        width: 100px;
+        height: 100px;
+        margin: -51px;
+        border-radius: 51%;
+        text-align: center;
+        line-height: 100px;
+    }
+
+    .deg-0 {
+        transform: translate(251px)
+    }
+
+    .deg-30 {
+        transform: rotate(31deg) translate(251px) rotate(-31deg);
+    }
+
+    .deg-60 {
+        transform: rotate(61deg) translate(251px) rotate(-61deg);
+    }
+
+    .deg-90 {
+        transform: rotate(91deg) translate(251px) rotate(-91deg);
+    }
+
+    .deg-120 {
+        transform: rotate(121deg) translate(251px) rotate(-121deg);
+    }
+
+    .deg-150 {
+        transform: rotate(151deg) translate(251px) rotate(-151deg);
+    }
+
+    .deg-180 {
+        transform: rotate(181deg) translate(251px) rotate(-181deg);
+    }
+
+    .deg-210 {
+        transform: rotate(211deg) translate(251px) rotate(-211deg);
+    }
+
+    .deg-240 {
+        transform: rotate(241deg) translate(251px) rotate(-241deg);
+    }
+
+    .deg-270 {
+        transform: rotate(271deg) translate(251px) rotate(-271deg);
+    }
+
+    .deg-300 {
+        transform: rotate(301deg) translate(251px) rotate(-301deg);
+    }
+
+    .deg-330 {
+        transform: rotate(331deg) translate(251px) rotate(-331deg);
     }
 </style>
 <script>
     window.onload = setAllAudioTimes;
+
+    function playStation(stationName) {
+        // start by pausing all stations
+        let allStations = document.getElementsByTagName('audio')
+        for (var i = allStations.length - 1; i >= 0; i--) {
+            allStations[i].pause();
+        }
+
+        // now play this station
+        document.getElementById(stationName).play();
+    }
 
     // set current seconds on all audio elements so they play from the same point
     function setAllAudioTimes() {
@@ -44,7 +184,6 @@
 
     // set current seconds on an audio element
     function setAudioTime(audioElement) {
-        console.log(audioElement)
         audioElement.currentTime = getCurrentSeconds();
     }
 
