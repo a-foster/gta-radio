@@ -202,8 +202,8 @@
     }
 
     .knob-base {
-        width: 80px;
-        height: 80px;
+        width: 110px;
+        height: 110px;
         background: linear-gradient(145deg, #2a2a2a, #1a1a1a);
         border-radius: 50%;
         position: relative;
@@ -213,22 +213,22 @@
 
     .knob-pointer {
         position: absolute;
-        width: 4px;
-        height: 30px;
+        width: 5px;
+        height: 42px;
         background: linear-gradient(to top, #ff6600, #ffaa00);
         left: 50%;
-        top: 5px;
+        top: 8px;
         transform: translateX(-50%);
         border-radius: 2px;
         box-shadow: 0 0 10px rgba(255, 102, 0, 0.5);
         transition: transform 0.3s ease;
-        transform-origin: center 35px;
+        transform-origin: center 47px;
     }
 
     .knob-center {
         position: absolute;
-        width: 20px;
-        height: 20px;
+        width: 28px;
+        height: 28px;
         background: linear-gradient(145deg, #444, #222);
         border-radius: 50%;
         top: 50%;
@@ -314,7 +314,7 @@
         .circle-wrapper {
             width: 340px;
             height: 340px;
-            margin-top: 20%;
+            margin-top: 60px;
         }
 
         .circle {
@@ -341,16 +341,6 @@
         .deg-300 { transform: rotate(301deg) translate(170px) rotate(-301deg); }
         .deg-330 { transform: rotate(331deg) translate(170px) rotate(-331deg); }
 
-        .knob-base {
-            width: 60px;
-            height: 60px;
-        }
-
-        .knob-pointer {
-            height: 22px;
-            transform-origin: center 26px;
-        }
-
         .controls-wrapper {
             bottom: 15px;
             left: 15px;
@@ -361,10 +351,6 @@
             width: 60px;
             height: 60px;
             font-size: 22px;
-        }
-
-        #volume-slider {
-            width: 80px;
         }
     }
 </style>
