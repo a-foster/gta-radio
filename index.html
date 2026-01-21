@@ -252,13 +252,13 @@
     }
 
     #play-pause-btn {
-        width: 50px;
-        height: 50px;
+        width: 80px;
+        height: 80px;
         border-radius: 50%;
         border: none;
         background: linear-gradient(145deg, #ff6600, #cc5200);
         color: white;
-        font-size: 20px;
+        font-size: 28px;
         cursor: pointer;
         display: flex;
         align-items: center;
@@ -307,6 +307,65 @@
         cursor: pointer;
         border: none;
         box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    }
+
+    /* Mobile responsive */
+    @media (max-width: 600px) {
+        .circle-wrapper {
+            width: 340px;
+            height: 340px;
+            margin-top: 20%;
+        }
+
+        .circle {
+            width: 75px;
+            height: 75px;
+            margin: -38px;
+        }
+
+        .station_icons {
+            max-width: 50px;
+            max-height: 50px;
+        }
+
+        .deg-0 { transform: translate(170px); }
+        .deg-30 { transform: rotate(31deg) translate(170px) rotate(-31deg); }
+        .deg-60 { transform: rotate(61deg) translate(170px) rotate(-61deg); }
+        .deg-90 { transform: rotate(91deg) translate(170px) rotate(-91deg); }
+        .deg-120 { transform: rotate(121deg) translate(170px) rotate(-121deg); }
+        .deg-150 { transform: rotate(151deg) translate(170px) rotate(-151deg); }
+        .deg-180 { transform: rotate(181deg) translate(170px) rotate(-181deg); }
+        .deg-210 { transform: rotate(211deg) translate(170px) rotate(-211deg); }
+        .deg-240 { transform: rotate(241deg) translate(170px) rotate(-241deg); }
+        .deg-270 { transform: rotate(271deg) translate(170px) rotate(-271deg); }
+        .deg-300 { transform: rotate(301deg) translate(170px) rotate(-301deg); }
+        .deg-330 { transform: rotate(331deg) translate(170px) rotate(-331deg); }
+
+        .knob-base {
+            width: 60px;
+            height: 60px;
+        }
+
+        .knob-pointer {
+            height: 22px;
+            transform-origin: center 26px;
+        }
+
+        .controls-wrapper {
+            bottom: 15px;
+            left: 15px;
+            padding: 10px 15px;
+        }
+
+        #play-pause-btn {
+            width: 60px;
+            height: 60px;
+            font-size: 22px;
+        }
+
+        #volume-slider {
+            width: 80px;
+        }
     }
 </style>
 <script>
